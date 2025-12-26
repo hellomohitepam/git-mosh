@@ -60,7 +60,7 @@ Changes not staged for commit:
 	modified:   02 Creating Snapshots/04- Staging Files.md
 ```
 
-We have the same file in the **Staging Area** and also marked as modified, and not staged. When we run the `git add` command Git took a snapshot of that file and added it to the **Staging Area**. So now we have a one version of the file in the staging area and another version in the **Working Directory**.
+We have the same file in the **Staging Area** and also marked as modified{not staged}. So now we have a one version of the file in the staging area and another version in the **Working Directory**. When we run the `git add` command Git took a snapshot of that file and added it to the **Staging Area**.
 
 We can run `git add` one more time to add our changes to the **Staging Area**.
 

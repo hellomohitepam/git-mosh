@@ -34,11 +34,8 @@ Examples:
 
 Git is the most popular **Version Control System (VCS)** in the world.
 
-<<<<<<< HEAD
-Git records the changed made to our code in a special database called repository. It enable us to look into our project history, and see what changes where made, by whom, when and why. And if we mess something then we can easily revert our project back to an earlier state.
-=======
 Git records the changed made to our code in a special database called repository. It enable us to look into our project history, and see what changes where made, by whom, when and why. And if we mess something it we can easily revert our project back to an earlier state.
->>>>>>> 71b9a40ad6b758353e45415d0edab677eaf45b59
+
 
 ![Git Repository](./images/03-01.png "Git Repository")
 

@@ -62,8 +62,6 @@ Changes not staged for commit:
 
 We have the same file in the **Staging Area** and also marked as modified{not staged}. So now we have a one version of the file in the staging area and another version in the **Working Directory**. When we run the `git add` command Git took a snapshot of that file and added it to the **Staging Area**.
 
-We can run `git add` one more time to add our changes to the **Staging Area**.
-
 ```zsh
 ❯ git status
 On branch main

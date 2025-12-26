@@ -48,4 +48,5 @@ Date:   Sat Feb 27 23:15:48 2021 -0300
     First commit
 ```
 
-Unlike other VCS Git stores, in each commit, the full snapshot of the project. Other VCS only store deltas or what was changed. Git those these in a very efficient manner, compressing the content and it does not store duplicates.
+
+In git each commit stores a full snapshot of the project but not as a complete copy of every file it's more like a tree structure with the references Unchanged files are just pointer To the previous version And only the changed files are actually stored. This makes it very efficient because it does not duplicate unchanged data In contrast old version control system like subversion Stores only the changes or deltas between versions that means they Track difference line by line rather than full snapshot. 

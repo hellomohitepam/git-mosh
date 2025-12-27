@@ -28,7 +28,8 @@ We can pass the flag `-s` to `git status -s` to have a shorter version.
 ?? "02 Creating Snapshots/12- Viewing Staged and Unstaged Changes.md"
 ```
 
-In this output we have two columns, the left column represents the **Staging Area** and the right column the **Working Directory**.
+In this output we have two columns,
+The first column indicates the status of the index (staged changes), and the second column indicates the status of the working tree (unstaged changes).
 
 We have modified file `02 Creating Snapshots/11- Short Status.md`, thats why we have a red **`M`** in the right column, but the left column is empty because we don not have staged this modifications.
 
@@ -50,4 +51,19 @@ If we keep modifying the file and run `git status -s` we will see to **`M`** one
 ❯ git status -s
 MM "02 Creating Snapshots/11- Short Status.md"
 A  "02 Creating Snapshots/12- Viewing Staged and Unstaged Changes.md"
+```
+
+
+```
+Symbol,Meaning,Description
+??,Untracked,New file that has not been added to the repository yet.
+A ,Added,File is added to the staging area (index).
+ M,Modified,File has been changed in the working directory but not staged.
+M ,Modified,File has been changed and the changes are staged.
+MM,Modified,"File is modified, staged, and then modified again (both columns)."
+D ,Deleted,File is deleted and the deletion is staged.
+ D,Deleted,File is deleted in the working directory but not staged.
+R ,Renamed,File has been renamed in the staging area.
+C ,Copied,File has been copied in the staging area.
+U ,Updated but Unmerged,File has a merge conflict that needs to be resolved.
 ```

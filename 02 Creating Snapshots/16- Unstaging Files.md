@@ -29,4 +29,4 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-When we run the `git restore --staged` git removes that file from the **Staging Area** and places there the copy from the last commit with that file.
+When we run the `git restore --staged <filename>` & `git reset head <filename>` git removes that file from the **Staging Area** and places there the copy from the last commit with that file.

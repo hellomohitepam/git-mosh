@@ -4,7 +4,7 @@ As we seen before we can use `git show` to the infos about a specific commit. [S
 
 ## Final version of a file
 
-We can see the final version of a file in a particular commit with the `git show HEAD~n:<path to the file>`. For example `git show HEAD~2:"02 Creating Snapshots/12- Viewing Staged and Unstaged Changes.md`. In here are 2 commits before `HEAD` which is the last commit.
+We can see the version of a file in a particular commit with the `git show HEAD~n:<path to the file>`. For example `git show HEAD~2:"02 Creating Snapshots/12- Viewing Staged and Unstaged Changes.md`. In here are 2 commits before `HEAD` which is the last commit.
 
 ## Files changed in a commit `--name-only`
 

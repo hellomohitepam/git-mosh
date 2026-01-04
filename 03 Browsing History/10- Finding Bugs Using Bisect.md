@@ -2,11 +2,11 @@
 
 Git provides a great tool to find bugs quickly by **Bisect**.
 
-Image that we have a bug in an application, but we do not know where the bug was introduced. Using the **Bisect** we can narrow our search.
+Imagine that we have a bug in an application, but we do not know where the bug was introduced. Using the **Bisect** we can narrow our search.
 
-It illustrates the binary search algorithm applied to your commit history to find the precise commit that introduced a bug.
+It uses binary search algorithm applied to your commit history to find the precise commit that introduced a bug.
 
-First we have to tell it that the current state, being the last commit, is a bad commit. And them we have to give it a good commit, as teh good state.
+First we have to tell it that the current state, being the last commit, is a bad commit. And then we have to give it a good commit, as the good state.
 
 Running `git log --oneline`, let say that the good state or good commit is `9f61863`. at that point in time the application was ok.
 
@@ -25,6 +25,11 @@ bf77b4e lesson completed
 ```
 
 ## The Iterative Testing Loop
+
+Start: Run `git bisect start`.
+Mark the Bad: Tell Git the current version is broken: `git bisect bad`.
+Mark the Good: Find an old commit ID where you know the code worked and tell Git: `git bisect good 9f61863`.
+
 Once the range is set, Git begins the process:
 
 `Checkout to Midpoint:` Git automatically performs a git checkout to the commit halfway between the "good" and "bad" commits. Your Working Directory is restored to that exact point in history. This puts you into a Detached HEAD state, managed internally by Git's bisect pointers.

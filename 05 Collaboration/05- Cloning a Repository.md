@@ -41,9 +41,12 @@ When we clone a **Remote Repository**, in this case from GitHub, Git names this 
 
 ### Reference `origin/main`
 
-The **_`origin/main`_** pointer, tell us where is the **_`main`_** branch in the **Remote Repository**. If we start to work and commit to the **Local Repository**, this one will move forward, but **_`origin/main`_**, will stay here it is until we push our work.
+## The Three "States" of Your Branch
+# When you are working, there are actually three different versions of "main" to keep track of:
 
-Technically this is called a remote tracking branch, we can not switch to it or commit to it.
+1. main (Local): This is your active workspace. When you type git commit, this pointer moves forward.
+2. origin/main (Remote Tracking): This is a local pointer that marks where the main branch was on the server (GitHub) the last time you ran git clone, git fetch, or git pull.
+3. main (On GitHub): The actual branch living on the server.
 
 ### List remote repositories
 

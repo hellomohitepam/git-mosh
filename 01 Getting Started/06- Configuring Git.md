@@ -28,20 +28,19 @@ The command to apply setting is `git config --global <setting> <value>`. The fla
   - `git config --global core.editor "code --wait"` code for **VS Code** the `--wait` tells the terminal to wait until the window is closed.
   - `git config --global --edit` command to open the config file in the editor.
 
-### End of lines
+## End of lines
 
 To manage end of line correctly we have to configure a property called `core.autocrlf`. These is a very import setting, so git can properly handle end of lines.
 
-#### Windows
+# Windows
 
 On Windows end of lines are marked with two special characters:
 
 - Carriage Return: `\r`
 - Line Feed: `\n`
+- `git config --global core.autocrlf true` {convert to "/n"}
 
-`git config --global core.autocrlf true`
-
-#### macOS / Linux
+# macOS / Linux
 
 On macOS and Linux end of lines are marked with one special character:
 

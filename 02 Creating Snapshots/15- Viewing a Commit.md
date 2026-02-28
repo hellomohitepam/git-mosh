@@ -2,9 +2,12 @@
 
 ## Show commit
 
-To view what was changed in a commit we can use the `git show` command. We have to pass the commit as an argument. There are two ways to reference a commit:
+To view what was changed in a commit we can use the `git show` command. 
+> `git show` shows Head and just previous commit difference.
 
-1. By the unique identifier, for example `git show 3e3c6c3`. We don't have to type all the characters, we can type fewer character as long they are unique.
+There are two ways to reference a commit:
+
+1. By the unique identifier, for example `git show 3e3c6c3`.we can type fewer character as long they are unique which show content for that commit
 2. Another way is using the `HEAD` pointer. `HEAD` is in front of the last commit, so we can type how many steps we want to go back `git show HEAD~2`, for example 2.
 
 This will produce a similar output to `git diff`.

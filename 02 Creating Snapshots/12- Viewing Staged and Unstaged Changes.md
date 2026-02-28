@@ -3,7 +3,7 @@
 Before committing code it is a best practice to review your code. To do that we can use the `git diff` command.
 
 ## Comparing between **working directory** and **Staging Area**
-git diff => This show what you have change but haven't change
+> git diff -> This show what you have change but haven't staged
 
 ````
 +## git diff command
@@ -17,7 +17,7 @@ git diff => This show what you have change but haven't change
 ````
 
 ## Comparing between **Staging Area** and **last commit**
-git diff --staged => This show what you have staged but haven't committed.
+> git diff --staged => This show what you have staged but haven't committed.
 
 ````zsh
 ❯ git diff --staged
@@ -53,3 +53,9 @@ The **`+1,5`** referes to the new copy. It means starting from line one **`1`** 
 @@ -1,3 +1,9 @@
 ```
 
+| Repository State                               | `git diff` Output               | `git diff --staged` (or `--cached`) Output |
+| ---------------------------------------------- | ------------------------------- | ------------------------------------------ |
+| Nothing staged, nothing committed (empty repo) | Empty                           | Empty                                      |
+| Changes made but **not staged**                | Shows changes                   | Empty                                      |
+| Changes **staged**                             | Empty                           | Shows changes                              |
+| Both staged and unstaged changes               | Shows **unstaged** changes only | Shows **staged** changes only              |

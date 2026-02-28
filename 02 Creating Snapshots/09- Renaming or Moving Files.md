@@ -20,7 +20,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 We have changes, and both are unstaged. One is a delete operation (the old file), and the other is an untracked file (the new file name).
 
-If we stage both files(separately) to the staging area and run git status one more time, Git is smart enough to detect that this was likely a rename operation:
+If the files in the stage area then if we rename the file the git automatically identifies but if not staged yet then nothing happen because git is not tracking that files.
 
 ```zsh
 ❯ git status

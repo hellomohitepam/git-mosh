@@ -28,6 +28,52 @@ index 0000000..3b350e3
 +# 11- Short Status
 +
 ```
+## Everything in Git Is an Object
+### There are 4 main object types:
+| Type       | What It Stores   |
+| ---------- | ---------------- |
+| **blob**   | File content     |
+| **tree**   | Folder structure |
+| **commit** | Commit metadata  |
+| **tag**    | Annotated tags   |
+
+🧠 What Is a Commit Internally?
+> A commit does NOT store files directly.
+### A commit stores:
+- Pointer to a tree (project snapshot)
+- Parent commit(s)
+- Author
+- Committer
+- Timestamp
+- Commit message
+
+## 🌳 Tree Object
+```
+commit  → a1b2c3...
+  └── tree → d4e5f6...  (root folder)
+        ├── blob → g7h8i9...  (README.md)
+        └── tree → x1y2z3...  (src folder)
+              └── blob → p4q5r6...  (index.js)
+```
+
+## 📄 Blob Object
+> Blob = actual file content.
+### If you change one file:
+- Git creates a new blob
+- Not a full copy of the repo
+
+## 🔗 How Commits Connect
+```A — B — C — D```
+### Internally:
+- D stores parent = C
+- C stores parent = B
+- B stores parent = A
+- A has no parent
+> This creates a linked chain.
+ 
+- commits - ```.git/objects/```
+- Branches - ```.git/refs/heads/main```
+
 
 ## Show commit single file
 

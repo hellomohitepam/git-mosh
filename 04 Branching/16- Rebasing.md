@@ -55,6 +55,17 @@ This will make Git apply the next commit on top of **_`main`_**. It is possible 
 
 We can use the `--skip` option to skip the current commit and move to the next commit. For example if the conflict appear in a particular commit, but we do not care about that commit.
 
+```
+main:    A → B → C
+bugfix:  A → D → E → F
+```
+When you run git rebase main on bugfix, Git replays:
+```
+Step 1: apply commit D on top of C  → possible conflict ⚠️
+Step 2: apply commit E on top of D  → possible conflict ⚠️
+Step 3: apply commit F on top of E  → possible conflict ⚠️
+```
+
 ```zsh
 git rebase --skip
 ```

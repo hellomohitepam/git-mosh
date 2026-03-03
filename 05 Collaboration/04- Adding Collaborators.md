@@ -38,9 +38,15 @@ Pull before Push: Always run git pull before you start working to ensure you hav
 *Once you have collaborators, you want to prevent anyone (including yourself!) from accidentally breaking the code on GitHub.*
 
 ### 1. Why Protect it?
-* Prevents direct pushes to `main`.
-* Forces everyone to use **Pull Requests (PRs)**.
-* Ensures code is reviewed before it is merged.
+| Branch Protection Rule       | What It Enforces                                  | Why It Matters                                       |
+| ---------------------------- | ------------------------------------------------- | ---------------------------------------------------- |
+| **No direct push to `main`** | Developers cannot push commits directly to `main` | Prevents unreviewed or unsafe changes                |
+| **Pull request required**    | All changes must go through a PR                  | Ensures structured review and discussion             |
+| **Minimum approvals**        | Requires 1–2+ reviewers to approve                | Enforces peer review and shared responsibility       |
+| **CI/CD must pass**          | Automated tests/build checks must succeed         | Prevents broken builds or failing tests from merging |
+| **No force push**            | `git push --force` is blocked                     | Protects commit history from being rewritten         |
+|                              |                                                   |                                                      |
+
 
 ### 2. How to Enable Protection
 1.  Go to your repo on GitHub and click **Settings**.
@@ -54,22 +60,6 @@ Pull before Push: Always run git pull before you start working to ensure you hav
 6.  Click **Create** at the bottom.
 
 ---
-
-## 👥 Adding Collaborators
-*Use this to give specific users permission to push code to your repository.*
-
-### 1. Invite via GitHub UI
-1.  Navigate to your repository on GitHub -> **Settings**.
-2.  Click **Collaborators** (under the "Access" section).
-3.  Click **Add people** and search by username or email.
-4.  The user **must accept** the email invite before they can push.
-
-### 2. Permission Levels
-| Role | Permissions |
-| :--- | :--- |
-| **Read** | Can only view/clone (reviewers). |
-| **Write** | Can pull, push, and create branches (standard developers). |
-| **Admin** | Full access, including deleting the repo. |
 
 ---
 

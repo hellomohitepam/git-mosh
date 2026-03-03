@@ -10,6 +10,10 @@ From https://github.com/jmschp/mosh-ultimate-git-course
 
 When we run `fetch` we got a remote tracking branch. We can run `git branch` to list all the local branches, but this new fetched branch will not be displayed, because it is a remote tracking branch. We can see it with `git branch -r`
 
+- git fetch → Downloads reference
+- git branch -r → Shows it
+- git checkout -b → Makes it usable locally
+
 ```zsh
 ❯ git branch -r
   origin/HEAD -> origin/main

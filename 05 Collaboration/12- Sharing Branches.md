@@ -4,7 +4,7 @@
 
 When we create a new branch it will only be available in our **Local Repository**. If we want to share our branches with team members we have to `push` them to the **Remote Repository**.
 
-If we try to `push` a branch, that it is not in the **Remote Repository**, with `git push`, we will get an error.
+If we try to `push` a branch, that it is not in the **Remote Repository**, with `git push`, we will get an error. because there is no `origin/feature-login`
 
 For example I have created a branch named `bugfix` and tried to `push` it. Git will throw an error:
 
@@ -24,7 +24,14 @@ The error message **_`The current branch bugfix has no upstream branch.`_** mean
   main   9edbb2f [origin/main] lesson complete
 ```
 
-To set the remote tracking branch we run the command Git suggested `git push --set-upstream origin <name-of-branch>`, we only have to pass `--set-upstream` option the first time.
+## ✅ Correct Way (First Time Push)
+
+> To set the remote tracking branch we run the command Git suggested `git push --set-upstream origin <name-of-branch>`, we only have to pass `--set-upstream` option the first time.
+
+### What this does:
+- Creates feature-login on remote
+- Sets tracking relationship
+- Now local branch tracks origin/feature-loginWhat this does:
 
 We can abbreviate the option `--set-upstream` to `-u`.
 

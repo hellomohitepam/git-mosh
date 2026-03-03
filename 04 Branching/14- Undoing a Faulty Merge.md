@@ -2,8 +2,8 @@
 
 In case we need to undo a merge we have two options:
 
-1. Remove the merge commit, as if it was never there (only if we did not shared the repository with others)
-2. Revert the merge commit
+1. git reset — rewrites history (dangerous for shared/pushed commits, others will have conflicts)
+2. git revert — creates a new commit that undoes changes (safe for shared history)
 
 ## 1. Remove the merge commit
 
@@ -68,14 +68,18 @@ A merge commit has two parents so have to tell git how we want to revert the cha
 ```zsh
 git revert -m 1 HEAD
 ```
+```
+main:   A → B → C --------→ M (merge commit)
+                              ↑
+bugfix:         C → D → E ───┘
 
-In the `-m 1`, we are specifying the first parent. And `HEAD` is representing the target commit, the last commit.
+M has two parents:
+Parent 1 → C (last commit on main)
+Parent 2 → E (last commit on bugfix)
+```
+So Git gets confused — "which side should I consider the mainline to revert to?"
 
-Running this Git will open the default editor with a default message for the revert commit.
-
-### Option `-m`
-
-From `git revet --help`
-
-> -m parent-number, --mainline parent-number
-> Usually you cannot revert a merge because you do not know which side of the merge should be considered the mainline. This option specifies the parent number (starting from 1) of the mainline and allows revert to reverse the change relative to the specified parent.
+> -m 1 tells Git — "parent 1 is the mainline" (which is the main branch)
+> So Git reverts back to how main looked before the merge happened
+> Effectively undoing all the bugfix changes that were merged in
+> Running this Git will open the default editor with a default message for the revert commit.

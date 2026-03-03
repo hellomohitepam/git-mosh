@@ -9,14 +9,39 @@ For example commits are
 
 ![Squash Merging](./images/15-01.png "Squash Merging")
 
+```
+new-feature branch commits:
+- "initial work"
+- "fixed typo"
+- "oops forgot this"
+- "finally works"
+- "code review fix"
+- "another fix"
+- "okay now it really works"
+```
+
+- These are messy, unnecessary, low quality commits that make no sense to anyone else.
+- when you do a regular merge, all these ugly commits come into main:
+
+```
+main: A → B → C → "initial work" → "fixed typo" → 
+      "oops forgot this" → "finally works" → ...
+```
+- This pollutes your main branch history and makes git log hard to read.
+- It takes **all those messy commits** and squashes them into **one single clean commit** on main
+```
+git merge --squash new-feature
+main: A → B → C → "added new feature"
+```
+
 This new commit is not a merge commit, because it does not have two parents. It is lacking the reference to **B2**, the last commit from the **bugfix** branch. It is just a regular commit added on top of ***`main`*** that combines the commits from the other branch.
 
 When we delete the **bugfix** branch, we are left with a clean linear history. This is the benefit fo Squash merging. But usually we should only apply it to short lived branches with bad history.
 
 ![Squash merging linear history](./images/15-01.png "Squash merging linear history")
 
-To perform a squash merge use the following command `git merge --squash <name-of-branch>`. Git will create a new commit, called a ***`Squash commit`***, that combines the changes made in the merged branch, and it will and the changes to the ***Staging Area***. Then we just need to commit then normall.
-
+To perform a squash merge use the following command `git merge --squash <branch-name>`.
+> Git will take all the commits from the feature branch and combine them into a single set of changes and place them in the Staging Area. It will NOT automatically create a commit — we have to manually run git commit -m "your message" to create one clean commit on main.
 ```zsh
 git merge --squash bugfix
 ```

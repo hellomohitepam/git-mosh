@@ -53,9 +53,9 @@ The **`+1,5`** referes to the new copy. It means starting from line one **`1`** 
 @@ -1,3 +1,9 @@
 ```
 
-| Repository State                               | `git diff` Output               | `git diff --staged` (or `--cached`) Output |
-| ---------------------------------------------- | ------------------------------- | ------------------------------------------ |
-| Nothing staged, nothing committed (empty repo) | Empty                           | Empty                                      |
-| Changes made but **not staged**                | Shows changes                   | Empty                                      |
-| Changes **staged**                             | Empty                           | Shows changes                              |
-| Both staged and unstaged changes               | Shows **unstaged** changes only | Shows **staged** changes only              |
+| Repository State                               | `git diff` Output             | `git diff --staged` (or `--cached`) Output |
+| ---------------------------------------------- |-------------------------------| ------------------------------------------ |
+| Nothing staged, nothing committed (empty repo) | Empty                         | Empty                                      |
+| Changes made but **not staged**                | Empty                         | Empty                                      |
+| Changes **staged**                             | Shows changes                 | Shows changes                              |
+| Both staged and unstaged changes               | Shows **staged** changes only | Shows **staged** changes only              |
